@@ -1,4 +1,4 @@
-export class Materias{
+export class Materia{
     private materia: string;
     private nota: number;
 
@@ -7,7 +7,7 @@ export class Materias{
         this.nota = nota;
     }
 
-    public getInfo(): Materias{
+    public getInfo(): Materia{
         return this;
     }
 }
