@@ -1,7 +1,7 @@
 import { Persona } from "./Persona";
 import { Alumno } from "./Alumno";
 import { Profesor } from "./Profesor";
-import { Materias } from "./Materias";
+import { Materia } from "./Materia";
 import { Contrato } from "./Contrato";
 import { Matricula } from "./Matricula";
 import * as fs from "fs";

@@ -11,4 +11,9 @@ export class Matricula{
     public getInfo(): Matricula{
         return this;
     }
+    public cambiarEstadoCursando(cursando: boolean): void {
+        this.cursando = cursando;
+      }
+
+
 }
