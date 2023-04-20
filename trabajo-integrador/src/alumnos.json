@@ -1,0 +1,44 @@
+[
+  {
+    "name": "juan",
+    "lastName": "perez",
+    "dni": "555151515",
+    "email": "jo@mail.io",
+    "matricula": "54CgB",
+    "fechaMatriculacion": "20/4/2023",
+    "materia": [
+      {
+        "materia": "recreo",
+        "nota": "4"
+      }
+    ]
+  },
+  {
+    "name": "pepe",
+    "lastName": "grillo",
+    "dni": "65412398",
+    "email": "grillo@mail.io",
+    "matricula": "56a7Cd",
+    "fechaMatriculacion": "20/4/2023",
+    "materia": [
+      {
+        "materia": "lengua",
+        "nota": "5"
+      }
+    ]
+  },
+  {
+    "name": "umpa",
+    "lastName": "lumpa",
+    "dni": "45819763",
+    "email": "ul@mail.io",
+    "matricula": "58",
+    "fechaMatriculacion": "20/4/2023",
+    "materia": [
+      {
+        "materia": "matematica",
+        "nota": "9"
+      }
+    ]
+  }
+]
