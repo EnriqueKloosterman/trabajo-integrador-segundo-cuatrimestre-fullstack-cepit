@@ -40,5 +40,33 @@
         "nota": "9"
       }
     ]
+  },
+  {
+    "name": "tito",
+    "lastName": "puentes",
+    "dni": "26788",
+    "email": "mai@lmail.com",
+    "matricula": "56FGty8",
+    "fechaMatriculacion": "19/4/2023, 00:00:00",
+    "materia": [
+      {
+        "materia": "fisica",
+        "nota": "10"
+      }
+    ]
+  },
+  {
+    "name": "mike",
+    "lastName": "patton",
+    "dni": "55555555",
+    "email": "fnm@mail.com",
+    "matricula": "io90Yu",
+    "fechaMatriculacion": "2023-02-14T03:00:00.000Z",
+    "materia": [
+      {
+        "materia": "musica",
+        "nota": "10"
+      }
+    ]
   }
 ]

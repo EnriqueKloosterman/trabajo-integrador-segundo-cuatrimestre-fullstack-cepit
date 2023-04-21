@@ -4,6 +4,7 @@ import { Alumno } from "./Alumno";
 import { Materia } from "./Materia";
 import { Profesor } from "./Profesor";
 import { Contrato } from "./Contrato";
+import { log } from "console";
 
 
 const readLineSync = require("readline-sync");
@@ -51,12 +52,26 @@ export class Gestor{
         teachers.push(profesor);
         fs.writeFileSync(profesoresJSON, JSON.stringify(teachers, null, 2), 'utf-8');
     }
+
+
+
+
+    public getAlumno(lastName: string): Persona[] {
+        const alumnoBuscado = this.alumno.filter(alumno => alumno.lastName === lastName);
+        console.log(alumnoBuscado);
+        return alumnoBuscado; 
+    }
+
+
+
+    
+
 }
 
 export function getPeople() {
     try {
         const data = JSON.parse(fs.readFileSync(alumnosJSON, 'utf8'));
-        const school = data.map((data: any) => new Alumno(data.name, data.last, data.dni, data.email, data.matricula, data.fechaMatriculacion,));
+        const school = data.map((data: any) => new Alumno(data.name, data.lastName, data.dni, data.email, data.matricula, data.fechaMatriculacion));
         return school;
     } catch (error) {
         console.log(error);
