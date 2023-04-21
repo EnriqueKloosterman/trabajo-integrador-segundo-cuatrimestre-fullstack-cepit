@@ -51,12 +51,12 @@ export class Alumno extends Persona{
         email: string,
         matricula: string,
         fechaMatriculacion: string
-    ) {
+    ){
         
     }
     
     
     public borrarAlumno() {
     
+    }
 }
-    
