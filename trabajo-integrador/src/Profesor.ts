@@ -10,6 +10,4 @@ export class Profesor extends Persona{
         this.materia = materia;
         this.contrato = contrato;
     }
-
 }
-

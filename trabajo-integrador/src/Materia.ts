@@ -10,7 +10,18 @@ export class Materia{
     public getInfo(): Materia{
         return this;
     }
-
+    public setNota(nota: number) {
+        this.nota = nota;
+}
+    
+    public getPromedio(): number {
+        return this.nota;
+    }
+    
+    public getDescripcion(): string {
+        return `${this.materia}: ${this.nota}`;
+    }
+    
     public toJson(){
         return {
             materia: this.materia,

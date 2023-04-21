@@ -1,7 +1,7 @@
 [
   {
-    "name": "domingo faustino",
-    "lastName": "sarmiento",
+    "name": "Domingo Faustino",
+    "lastName": "Sarmiento",
     "dni": "0000001",
     "email": "profe@profe.io",
     "materia": "etica",
@@ -11,8 +11,8 @@
     }
   },
   {
-    "name": "jimi",
-    "lastName": "hendrix",
+    "name": "Jimi",
+    "lastName": "Hendrix",
     "dni": "00001",
     "email": "jimi@mail.io",
     "materia": "musica",

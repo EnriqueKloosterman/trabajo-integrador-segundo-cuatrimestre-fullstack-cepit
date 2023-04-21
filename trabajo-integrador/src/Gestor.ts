@@ -38,6 +38,7 @@ export class Gestor{
     }
 
 
+
     setProfesor(){
         const name = readLineSync.question("Nombre del profesor: ").toLowerCase();
         const lastName = readLineSync.question("Apellido del Profesor: ").toLowerCase();
@@ -63,4 +64,3 @@ export function getPeople() {
         return [];
     }
 }
-

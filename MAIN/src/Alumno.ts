@@ -6,7 +6,7 @@ export class Alumno extends Persona{
     private materia: Materia[];
     private promedio: number
     private matricula: Matricula[];
-    public constructor(nombre: string, apellido: string, edad: number, dni: number, mail: string, materia: Materias, promedio: number){
+    public constructor(nombre: string, apellido: string, edad: number, dni: number, mail: string, materia: Materia, promedio: number){
         super(nombre, apellido, edad, dni, mail, );
         this.materia = [];
         this.matricula = [];
@@ -19,7 +19,7 @@ export class Alumno extends Persona{
     public agregarMateria(materia: Materia):void{
         this.materia.push(materia);
 
-    public eliminarMateria(materia: Materia): void {
+    public eliminarMateria(materia: Materia) {
         const index = this.materia.indexOf(materia);
         if (index > -1) {
             this.materia.splice(index, 1);
@@ -32,8 +32,8 @@ export class Alumno extends Persona{
     return this.matricula;
   }
 
-  public setMatricula(Matricula: number): void {
-    this.matricula = Matricula;
+  public setMatricula(Matricula: number) : void {
+    this.matricula = Matricula
   }
 
   

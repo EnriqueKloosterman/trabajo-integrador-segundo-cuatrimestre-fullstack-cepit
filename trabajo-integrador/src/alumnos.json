@@ -1,7 +1,7 @@
 [
   {
-    "name": "juan",
-    "lastName": "perez",
+    "name": "Juan",
+    "lastName": "Perez",
     "dni": "555151515",
     "email": "jo@mail.io",
     "matricula": "54CgB",
@@ -14,8 +14,8 @@
     ]
   },
   {
-    "name": "pepe",
-    "lastName": "grillo",
+    "name": "Pepe",
+    "lastName": "Grillo",
     "dni": "65412398",
     "email": "grillo@mail.io",
     "matricula": "56a7Cd",
@@ -28,7 +28,7 @@
     ]
   },
   {
-    "name": "umpa",
+    "name": "Umpa",
     "lastName": "lumpa",
     "dni": "45819763",
     "email": "ul@mail.io",

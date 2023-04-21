@@ -21,5 +21,38 @@ export class Alumno extends Persona{
     public setMateria(materia: Materia){
         this.materia.push(materia);
     }
-
+    public static crearAlumno(
+        name: string,
+        lastName: string,
+        dni: number,
+        email: string,
+        matricula: string,
+        fechaMatriculacion: string
+    ): Alumno {
+        const alumnoObj = new Alumno(name, lastName,dni, email, matricula, fechaMatriculacion );
+        // aquí se puede guardar el objeto Alumno en una base de datos o en una lista
+        return alumnoObj;
+    }
+    
+    public static buscarAlumno(matricula: string): Alumno | undefined {
+        
+        return undefined; 
+    }
+    
+    public actualizarAlumno(
+        name: string,
+        lastName: string,
+        dni: number,
+        email: string,
+        matricula: string,
+        fechaMatriculacion: string
+    ) {
+        
+    }
+    
+    
+    public borrarAlumno() {
+    
 }
+    }
+
