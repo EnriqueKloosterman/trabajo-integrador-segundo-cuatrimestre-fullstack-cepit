@@ -8,19 +8,24 @@ const alumnosJSON = "alumnos.json";
 
 export class Alumno extends Persona{
     private matricula: string;
-    private fechaMatriculacion: string;
-    private materia: Materia[];
+    private fechaMatriculacion: Date;
+    public materia: Materia[];
 
     public constructor(name: string, lastName: string, dni: number, email: string, matricula: string, fechaMatriculacion: string){
         super(name, lastName, dni, email);
         this.matricula = matricula;
-        this.fechaMatriculacion = new Date(fechaMatriculacion).toLocaleDateString();
+        this.fechaMatriculacion = new Date(fechaMatriculacion);
         this.materia = [];
     }
 
     public setMateria(materia: Materia){
         this.materia.push(materia);
     }
+
+    public getLastName(): string {
+        return super.getLastName();
+    }
+
     public static crearAlumno(
         name: string,
         lastName: string,
@@ -34,7 +39,7 @@ export class Alumno extends Persona{
         return alumnoObj;
     }
     
-    public static buscarAlumno(matricula: string): Alumno | undefined {
+    public  buscarAlumno(matricula: string): Alumno | undefined {
         
         return undefined; 
     }
@@ -54,5 +59,5 @@ export class Alumno extends Persona{
     public borrarAlumno() {
     
 }
-    }
+    
 

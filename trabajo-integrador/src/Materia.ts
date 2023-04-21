@@ -1,6 +1,6 @@
 export class Materia{
-    private materia: string;
-    private nota: number;
+    public materia: string;
+    public nota: number;
 
     public constructor(materia: string, nota: number){
         this.materia = materia;
