@@ -130,5 +130,27 @@
         "nota": "6"
       }
     ]
-  }  
+  },
+  {
+    "name": "diego",
+    "lastName": "solis",
+    "dni": "54789256",
+    "email": "meail7@mail.io",
+    "matricula": "588adT44",
+    "fechaMatriculacion": "2023-03-14T03:00:00.000Z",
+    "materia": [
+      {
+        "materia": "historia",
+        "nota": "6"
+      },
+      {
+        "materia": "matematica",
+        "nota": "6"
+      },
+      {
+        "materia": "bilogia",
+        "nota": "6"
+      }
+    ]
+  }
 ]

@@ -90,8 +90,8 @@ export class Gestor{
     }
 
     //* obtiene un alumno cons sus notas y promedio
-    getAlumno(lastName:string): any[]{
-        //todo busca el alumno opr el apellido
+    getAlumno(lastName:string): void{
+        //todo busca el alumno por el apellido
         const alumnoEncontrado = students.find((alumno: any) => alumno.lastName === lastName);
         if(alumnoEncontrado){
             const name = alumnoEncontrado.name;
@@ -103,19 +103,19 @@ export class Gestor{
             console.log(`nombre: ${name}\napellido: ${lastName}\n$nro de documento: ${dni}\n$email: ${email}\nmatricula: ${matricula}\nfecha de matriculación: ${fechaMatriculacion}`);
             //todo Obtiene las materias y las notas del alumno buscado
             const materias = this.getMateriasAlumno(alumnoEncontrado.lastName);
-            //todo imprime en consola cada materia y nota del del alumno buscado
+            //todo imprime en consola cada materia y nota del alumno buscado
             for(let i = 0; i < materias.length; i++){
                 console.log(`Materia ${i + 1}: ${materias[i].materia} Nota: ${materias[i].nota}`)
                 }
             //todo obtiene el promedio del alumno buscado
             const promedio = this.getPromedioAlumno(alumnoEncontrado.lastName)
             console.log(`promedio ${promedio}` );
-            return [name, lastName, materias, promedio];
+            // return [name, lastName, materias, promedio];
             
         }else{
-            //todo si no encuntrsa al alumno devuleve un array vacio
+            //todo si no encuntrsa al alumno devuelve un array vacio
             console.log("No se encontró ningún alumno con ese apellido.");
-            return [];
+            // return [];
         }
     }
 
@@ -183,10 +183,14 @@ export class Gestor{
     //! ****
 
     //* busca un profesor por su apellido
-    getProfesor(profesor: string) {
-        const profesorEncontrado = teachers.find((profesor: any) => profesor === profesor);
-        console.log(profesorEncontrado);
-        return profesorEncontrado
+    getProfesor(lastName: string): void {
+        const profesorEncontrado = teachers.find((profesor: any) => profesor.lastName === lastName);
+        if (profesorEncontrado) {
+            console.log(profesorEncontrado);
+        }else{
+            console.log('Profesor no encontrado.');           
+        }
+        // return profesorEncontrado
     }
 
     //* muestra todos los prfesores

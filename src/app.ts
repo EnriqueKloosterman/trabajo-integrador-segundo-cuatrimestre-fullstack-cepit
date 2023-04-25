@@ -12,10 +12,10 @@ const gestor = new Gestor(student);
 // gestor.getPromedioAlumno('chill');
 // gestor.getAlumno('chill')
 // console.table(student)
-// gestor.getProfesor('hendrix');
+gestor.getProfesor('quiroga');
 // gestor.getProfesores();
 // gestor.getAlumnosPorProfesor('gomez');
-gestor.getProfesoresPorAlumno('chill');
+// gestor.getProfesoresPorAlumno('chill');
 
 
 
