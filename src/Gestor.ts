@@ -55,9 +55,12 @@ export class Gestor{
 
     //*busca las materias de un alumno
     getMateriasAlumno(lastName: string): any[] {
+        //todo busca un alumno por el apellido
         const alumnoEncontrado = students.find((alumno: any) => alumno.lastName === lastName);
+        //todo si encuentra el alumno retorna el array materia con las materias que cursa el alumno
         if (alumnoEncontrado) {           
             return alumnoEncontrado.materia;
+        //todo si no encuntrsa al alumno devuleve un array vacio
         } else {
             console.log("No se encontró ningún alumno con ese apellido.");
             return [];
@@ -66,16 +69,21 @@ export class Gestor{
 
     //* buscar promedios por alumno
     getPromedioAlumno(lastName: string): number {
+                //todo busca un alumno por el apellido
         const alumnoEncontrado = students.find((alumno: any) => alumno.lastName === lastName);
+        //todo si encuentra el alumno retorna el promedio de las materias que cursa el alumno
         if (alumnoEncontrado) {
             let sumaNota = 0;
+            //todo itera sobre cada materia sumando las notas
             for(let i = 0; i < alumnoEncontrado.materia.length; i++){
                 sumaNota += parseFloat(alumnoEncontrado.materia[i].nota);
             }
+            //todo divide las notas entre el total de materias
             const promedio = sumaNota / alumnoEncontrado.materia.length
             // console.log(`promedio: ${promedio}`);
             return promedio;
         }else{
+            //todo si no encuntra al alumno devuelve 0
             console.log("No se encontró ningún alumno con ese apellido.");
             return 0;
         }
@@ -83,6 +91,7 @@ export class Gestor{
 
     //* obtiene un alumno cons sus notas y promedio
     getAlumno(lastName:string): any[]{
+        //todo busca el alumno opr el apellido
         const alumnoEncontrado = students.find((alumno: any) => alumno.lastName === lastName);
         if(alumnoEncontrado){
             const name = alumnoEncontrado.name;
@@ -91,17 +100,20 @@ export class Gestor{
             const email = alumnoEncontrado.email;
             const matricula = alumnoEncontrado.matricula;
             const fechaMatriculacion = alumnoEncontrado.fechaMatriculacion.toLocaleString();
-
             console.log(`nombre: ${name}\napellido: ${lastName}\n$nro de documento: ${dni}\n$email: ${email}\nmatricula: ${matricula}\nfecha de matriculación: ${fechaMatriculacion}`);
+            //todo Obtiene las materias y las notas del alumno buscado
             const materias = this.getMateriasAlumno(alumnoEncontrado.lastName);
+            //todo imprime en consola cada materia y nota del del alumno buscado
             for(let i = 0; i < materias.length; i++){
                 console.log(`Materia ${i + 1}: ${materias[i].materia} Nota: ${materias[i].nota}`)
                 }
+            //todo obtiene el promedio del alumno buscado
             const promedio = this.getPromedioAlumno(alumnoEncontrado.lastName)
             console.log(`promedio ${promedio}` );
             return [name, lastName, materias, promedio];
             
         }else{
+            //todo si no encuntrsa al alumno devuleve un array vacio
             console.log("No se encontró ningún alumno con ese apellido.");
             return [];
         }
@@ -109,13 +121,17 @@ export class Gestor{
 
     //* busca todos los alumnos con sus notas promedios
     getPromedioAlumnos() {
+        //todo recorre todos los alunmos guardados en la variable students, que contine el archivo JSON donde se almacenan los alumnos
         for (let i = 0; i < students.length; i++) {
             const alumno = students[i];
             console.log(`Alumno: ${alumno.name} ${alumno.lastName}`);
+            //todo  obtiene las materias de los alumnos
             const materias = this.getMateriasAlumno(alumno.lastName);
+            //todo recorre las materias e imprime en consola cada materia con su nota
             for(let i = 0; i < materias.length; i++){
                 console.log(`Materia ${i + 1}: ${materias[i].materia} Nota: ${materias[i].nota}`)
                 }
+            //todo obtiene el promedio de los alumnos
             let sumaNotas = 0;
             for (let j = 0; j < materias.length; j++) {
                 sumaNotas += parseFloat(materias[j].nota);
@@ -125,6 +141,43 @@ export class Gestor{
         }
     }
 
+
+    //* listado de profesores por alumno
+    public getProfesoresPorAlumno(lastName: string): void {
+        //todo busca al alumno por el apellido 
+        const alumnoEncontrado = students.find((alumno: any) => alumno.lastName === lastName);
+        if (!alumnoEncontrado) {
+            console.log("No se encontró ningún alumno con ese nombre");
+            return;
+        }
+        //todo crea un array vacío para almacenar los nombres de los profesores del alumno
+        const profesoresDelAlumno: string[] = [];
+        //todo recorre cada materia del alumno y busca el profesor enseña esa materia'
+        alumnoEncontrado.materia.forEach((materia: any ) => {
+            const profesorDeLaMateria = teachers.find(
+            (profesor: any) => profesor.materia === materia.materia
+            );
+            //todo si se encuentra un profesor que enseña la materia, agrega su nombre completo al array 'profesoresDelAlumno'
+            if (profesorDeLaMateria) {
+                const nombreCompletoProfesor = `${profesorDeLaMateria.name} ${profesorDeLaMateria.lastName}`;
+            if (!profesoresDelAlumno.includes(nombreCompletoProfesor)) {
+                profesoresDelAlumno.push(nombreCompletoProfesor);
+            }
+            }
+        });
+        //todo Si el array 'profesoresDelAlumno' está vacío, muestra un mensaje y termina la función
+        if (profesoresDelAlumno.length === 0) {
+            console.log("El alumno no tiene profesores asignados");
+            return;
+        }
+        //todo imprime en consola el listado de profesores del alumno
+        // console.log(profesoresDelAlumno);        
+        console.log(
+            `Los profesores del alumno con nombre ${lastName} son: ${profesoresDelAlumno.join(
+            ", "
+            )}`
+        );
+    }
     //! *****
         //* metodos profesor
     //! ****
@@ -143,7 +196,29 @@ export class Gestor{
         
     }
     
-
+    //* listado de alumnos por profesor
+    getAlumnosPorProfesor(lastName: string): any[] {
+        const alumnosPorProfesor: any = [];
+        //todo Busca el profesor por su apellido
+        const profesorEncontrado = teachers.find((profesor: any) => profesor.lastName === lastName);
+        if (profesorEncontrado) {
+        //todo Recorre los alumnos y busca aquellos que tengan asignada la materia del profesor
+            for (let i = 0; i < students.length; i++) {
+                const alumno = students[i];
+                const materiaDelAlumno = alumno.materia.find((materia: any) => materia.materia === profesorEncontrado.materia);
+                if (materiaDelAlumno) {
+                    alumnosPorProfesor.push( `${ alumno.name} ${alumno.lastName}`);
+                }
+            }
+            // console.log(alumnosPorProfesor);
+            console.log(`el profesor ${lastName} tiene como alumnos a: ${alumnosPorProfesor.join(",")}`);
+            return alumnosPorProfesor;
+        } else {
+            console.log("No se encontró ningún profesor con ese apellido.");
+            
+            return [];
+        }
+    }
 
 }
 export function getPeople() {

@@ -4,7 +4,7 @@ const student = getPeople();
 const gestor = new Gestor(student);
 
 // gestor.setAlumno();
-gestor.setProfesor();
+// gestor.setProfesor();
 
 // gestor.getAllAlumnos();
 // gestor.getPromedioAlumnos();
@@ -14,6 +14,10 @@ gestor.setProfesor();
 // console.table(student)
 // gestor.getProfesor('hendrix');
 // gestor.getProfesores();
+// gestor.getAlumnosPorProfesor('gomez');
+gestor.getProfesoresPorAlumno('chill');
+
+
 
 
 
