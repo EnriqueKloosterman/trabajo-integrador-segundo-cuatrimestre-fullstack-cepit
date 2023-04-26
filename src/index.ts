@@ -16,6 +16,7 @@ function menu() {
         console.log('5. Buscar alumnos por profesor');
         console.log('6. Buscar alumno por apellido');
         console.log('7. Buscar profesor por alumno');
+        console.log('8. Listado de profesores')
         console.log('0. Salir');
         opcion = readlineSync.question('Ingrese una opcion: ');
 
@@ -65,6 +66,13 @@ function menu() {
             console.clear();
             gestor.getProfesoresPorAlumno(apellido2);
             break;
+
+        case '8':
+            console.clear()
+            const allTeachers = gestor.getProfesores()
+            console.log(allTeachers);
+            break;
+
         case '0':
             console.log(`Saliendo del programa... 
             Vuelva brontos....`);

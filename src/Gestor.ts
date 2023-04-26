@@ -122,7 +122,7 @@ export class Gestor{
     //* busca todos los alumnos con sus notas promedios
     getPromedioAlumnos() {
         //todo recorre todos los alunmos guardados en la variable students, que contine el archivo JSON donde se almacenan los alumnos
-        for (let i = 0; i < students.length; i++) {
+        for(let i = 0; i < students.length; i++){
             const alumno = students[i];
             console.log(`Alumno: ${alumno.name} ${alumno.lastName}`);
             //todo  obtiene las materias de los alumnos
@@ -130,14 +130,14 @@ export class Gestor{
             //todo recorre las materias e imprime en consola cada materia con su nota
             for(let i = 0; i < materias.length; i++){
                 console.log(`Materia ${i + 1}: ${materias[i].materia} Nota: ${materias[i].nota}`)
-                }
+            }
             //todo obtiene el promedio de los alumnos
             let sumaNotas = 0;
             for (let j = 0; j < materias.length; j++) {
                 sumaNotas += parseFloat(materias[j].nota);
             }
             const promedio = sumaNotas / materias.length;
-            console.log(`Promedio: ${promedio}\n`);
+            console.log(`Promedio: ${promedio}\n\n`);
         }
     }
 
@@ -186,22 +186,24 @@ export class Gestor{
     getProfesor(lastName: string): void {
         const profesorEncontrado = teachers.find((profesor: any) => profesor.lastName === lastName);
         if (profesorEncontrado) {
-            console.log(profesorEncontrado);
+            console.log(`nombre: ${profesorEncontrado.name}\nApellido: ${profesorEncontrado.lastName}\nDNI: ${profesorEncontrado.dni}\nemail: ${profesorEncontrado.email}\nmateria: ${profesorEncontrado.materia}\nFecha de inicio del contrato: ${profesorEncontrado.contrato.startingDate.toLocaleString()}\nFecha de finalizacion del contrato: ${profesorEncontrado.contrato.expiringDate.toLocaleString()}`);
         }else{
             console.log('Profesor no encontrado.');           
         }
-        // return profesorEncontrado
+
     }
 
     //* muestra todos los prfesores
     getProfesores() {
-        console.log(teachers);
-        return teachers
-        
+        for(let i = 0; i < teachers.length; i++){
+            const teacher = teachers[i];
+            console.log(`nombre: ${teacher.name}\napellido: ${teacher.lastName}\nDNI: ${teacher.dni}\nemail: ${teacher.email}\nmateria: ${teacher.materia}\nfecha de inicio del contrato ${teacher.contrato.startingDate.toLocaleString()}\nFecha de finalizacion del contrato: ${teacher.contrato.expiringDate.toLocaleString()}\n\n`);
+        }
+        // return teachers
     }
     
     //* listado de alumnos por profesor
-    getAlumnosPorProfesor(lastName: string): any[] {
+    getAlumnosPorProfesor(lastName: string): void{
         const alumnosPorProfesor: any = [];
         //todo Busca el profesor por su apellido
         const profesorEncontrado = teachers.find((profesor: any) => profesor.lastName === lastName);
@@ -215,12 +217,12 @@ export class Gestor{
                 }
             }
             // console.log(alumnosPorProfesor);
-            console.log(`el profesor ${lastName} tiene como alumnos a: ${alumnosPorProfesor.join(",")}`);
-            return alumnosPorProfesor;
+            console.log(`el profesor ${lastName} tiene como alumnos a: ${alumnosPorProfesor.join(", ")}`);
+            // return alumnosPorProfesor;
         } else {
             console.log("No se encontró ningún profesor con ese apellido.");
             
-            return [];
+            // return [];
         }
     }
 
