@@ -173,7 +173,7 @@ export class Gestor{
         //todo imprime en consola el listado de profesores del alumno
         // console.log(profesoresDelAlumno);        
         console.log(
-            `Los profesores del alumno con nombre ${lastName} son: ${profesoresDelAlumno.join(
+            `Los profesores del alumno ${lastName} son: ${profesoresDelAlumno.join(
             ", "
             )}`
         );
