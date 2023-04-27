@@ -152,5 +152,27 @@
         "nota": "6"
       }
     ]
+  },
+  {
+    "name": "juan",
+    "lastName": "marquez",
+    "dni": "23125478",
+    "email": "mail7",
+    "matricula": "15ff5TGR4",
+    "fechaMatriculacion": "2023-04-27T03:00:00.000Z",
+    "materia": [
+      {
+        "materia": "biologia",
+        "nota": "6"
+      },
+      {
+        "materia": "matematica",
+        "nota": "9"
+      },
+      {
+        "materia": "historia",
+        "nota": "4"
+      }
+    ]
   }
 ]

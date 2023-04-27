@@ -77,6 +77,7 @@ function menu() {
             console.log(`Saliendo del programa... 
             Vuelva brontos....`);
             break;
+            
         default:
             console.log('Opcion invalida');
             break;

@@ -6,13 +6,13 @@ const gestor = new Gestor(student);
 // gestor.setAlumno();
 // gestor.setProfesor();
 
-// gestor.getAllAlumnos();
-// gestor.getPromedioAlumnos();
+
 // gestor.getMateriasAlumno('patton');
 // gestor.getPromedioAlumno('chill');
+// gestor.getPromedioAlumnos();
 // gestor.getAlumno('chill')
 // console.table(student)
-gestor.getProfesor('quiroga');
+// gestor.getProfesor('quiroga');
 // gestor.getProfesores();
 // gestor.getAlumnosPorProfesor('gomez');
 // gestor.getProfesoresPorAlumno('chill');

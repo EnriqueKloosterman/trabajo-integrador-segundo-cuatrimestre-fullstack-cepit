@@ -4,8 +4,5 @@ export class Persona extends AbstractPersona{
         super(name, lastName, dni, email);
     }
 
-    public getLastName(): string {
-        return this.lastName;
-    }
     
 }

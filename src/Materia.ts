@@ -13,10 +13,10 @@ export class Materia{
 
     
 
-    public toJson(){
-        return {
-            materia: this.materia,
-            nota: this.nota
-        }
-    }
+    // public toJson(){
+    //     return {
+    //         materia: this.materia,
+    //         nota: this.nota
+    //     }
+    // }
 }

@@ -4,7 +4,7 @@ import { Persona } from "./Persona";
 import { Materia } from "./Materia";
 
 const alumnosJSON = "alumnos.json";
-const students = JSON.parse(fs.readFileSync(alumnosJSON, 'utf-8'));
+// const students = JSON.parse(fs.readFileSync(alumnosJSON, 'utf-8'));
 
 
 export class Alumno extends Persona{
@@ -21,12 +21,9 @@ export class Alumno extends Persona{
     public setMateria(materia: Materia){
         this.materia.push(materia);
     }
-    public getMateria(): Materia[] {
-        console.log(this.materia)
-        return this.materia;
-    }
+    // public getMateria(): Materia[] {
+    //     console.log(this.materia)
+    //     return this.materia;
+    // }
 
-    public getLastName(): string {
-        return super.getLastName();
-    }
 }
